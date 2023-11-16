@@ -1,0 +1,23 @@
+apiVersion: image.openshift.io/v1
+kind: ImageStream
+metadata:
+  creationTimestamp: null
+  labels:
+    io.kompose.service: redis
+  name: redis
+  namespace: default
+spec:
+  lookupPolicy:
+    local: false
+  tags:
+    - annotations: null
+      from:
+        kind: DockerImage
+        name: redis:alpine
+      generation: null
+      importPolicy: {}
+      name: alpine
+      referencePolicy:
+        type: ""
+status:
+  dockerImageRepository: ""
